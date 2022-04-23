@@ -1,8 +1,15 @@
 import React from "react";
 
 class Btn extends React.Component {
-  render({ value } = this.props) {
-    return <input className="tip btn btn--tip" value={value} type="button" />;
+  render({ value, handleData } = this.props) {
+    return (
+      <input
+        className="tip btn btn--tip"
+        value={value}
+        type="submit"
+        onClick={(e) => handleData(e.target.value.split("%")[0])}
+      />
+    );
   }
 }
 

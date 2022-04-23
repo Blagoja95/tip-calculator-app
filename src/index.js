@@ -3,6 +3,11 @@ import ReactDOM from "react-dom";
 import TipInput from "./components/TipInput";
 import TipResult from "./components/TipResult";
 class App extends React.Component {
+  state = { tip: 0, tot: 0 };
+
+  getData = (data) => {
+    this.setState({ tip: data.tip, tot: data.tot });
+  };
   render() {
     return (
       <main>
@@ -10,8 +15,8 @@ class App extends React.Component {
           SPLI<span>TTER</span>
         </h1>
         <div className="calculator">
-          <TipInput />
-          <TipResult />
+          <TipInput getData={this.getData} />
+          <TipResult data={this.state} />
         </div>
       </main>
     );

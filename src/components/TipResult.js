@@ -2,14 +2,12 @@ import React from "react";
 import InputField from "./InputField";
 import Btn from "./Btn";
 import Result from "./Result";
-
 class TipResult extends React.Component {
-  render() {
+  render({ tip, tot } = this.props.data) {
     return (
       <div className="result-block">
-        <Result name={"Tip Amount"} value={4.25} />
-        <Result name={"Total"} value={32.25} />
-
+        <Result name={"Tip Amount"} value={tip} />
+        <Result name={"Total"} value={tot} />
         <Btn value={"RESET"}></Btn>
       </div>
     );
