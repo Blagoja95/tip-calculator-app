@@ -1,0 +1,33 @@
+@media screen and (min-width: 710px) {
+  #root,
+  main {
+    max-width: 80rem;
+  }
+  .calculator {
+    flex-direction: row;
+  }
+
+  .tip-block {
+    width: 50%;
+  }
+
+  .result-block {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 3rem;
+  }
+
+  .tips {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .btn--reset {
+    margin-top: 13rem;
+  }
+
+  .tip-result {
+    font-size: 4rem;
+  }
+}

@@ -20,11 +20,8 @@
   }
 }
 
-.btn--active {
-  color: $Very-dark-cyan;
-  background-color: $Strong-cyan;
-}
-
+.btn--active,
 .btn--reset {
+  color: $Very-dark-cyan;
   background-color: $Strong-cyan;
 }
