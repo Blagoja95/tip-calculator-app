@@ -1,6 +1,7 @@
 import React from "react";
 import InputField from "./InputField";
 import TipSelectBtn from "./Btn";
+import CustomInput from "./CustomInput";
 
 class TipForm extends React.Component {
   state = {
@@ -36,14 +37,34 @@ class TipForm extends React.Component {
         >
           <InputField name={"Bill"} handleData={this.handleBill} />
           <div className="tip-select">
-            <h2>Select Tip %</h2>
+            <h2 className="title">Select Tip %</h2>
             <div className="tips">
-              <TipSelectBtn value="5%" handleData={this.handlePercentage} />
-              <TipSelectBtn value="10%" handleData={this.handlePercentage} />
-              <TipSelectBtn value="15%" handleData={this.handlePercentage} />
-              <TipSelectBtn value="25%" handleData={this.handlePercentage} />
-              <TipSelectBtn value="50%" handleData={this.handlePercentage} />
-              <TipSelectBtn value="Custom" handleData={this.handlePercentage} />
+              <TipSelectBtn
+                value="5%"
+                className={"tip btn btn--tip"}
+                handleData={this.handlePercentage}
+              />
+              <TipSelectBtn
+                value="10%"
+                className={"tip btn btn--tip"}
+                handleData={this.handlePercentage}
+              />
+              <TipSelectBtn
+                value="15%"
+                className={"tip btn btn--tip"}
+                handleData={this.handlePercentage}
+              />
+              <TipSelectBtn
+                value="25%"
+                className={"tip btn btn--tip"}
+                handleData={this.handlePercentage}
+              />
+              <TipSelectBtn
+                value="50%"
+                className={"tip btn btn--tip"}
+                handleData={this.handlePercentage}
+              />
+              <CustomInput name="custom" handleData={this.handlePercentage} />
             </div>
           </div>
           <InputField

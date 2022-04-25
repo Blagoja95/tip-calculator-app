@@ -1,0 +1,40 @@
+.form-tip {
+  @extend %flexGap;
+}
+
+.input,
+.tip-select {
+  @extend %flexLeftColumn;
+  gap: 1rem;
+}
+
+.tips {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.input__bar {
+  width: 100%;
+  padding: 1rem;
+  background: $Very-light-grayish-cyan;
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+  font-size: 2.8rem;
+  color: $Very-dark-cyan;
+  text-align: right;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid $Strong-cyan;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid $Strong-cyan;
+  }
+}

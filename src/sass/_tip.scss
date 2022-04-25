@@ -1,0 +1,30 @@
+.tip {
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 5px;
+}
+
+.btn--tip {
+  color: $Very-light-grayish-cyan;
+  background-color: $Very-dark-cyan;
+  border: none;
+  font-size: $form-inputs-font;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $Light-grayish-cyan;
+    color: $Very-dark-cyan;
+  }
+}
+
+.btn--active {
+  color: $Very-dark-cyan;
+  background-color: $Strong-cyan;
+}
+
+.btn--reset {
+  background-color: $Strong-cyan;
+}

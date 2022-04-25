@@ -1,0 +1,34 @@
+.result-block {
+  background-color: $Very-dark-cyan;
+  padding: 2rem;
+  border-radius: inherit;
+  @extend %flexGap;
+}
+
+.tip-amount {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.tip-amount-title {
+  color: $White;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.tip-amount-person {
+  color: $Grayish-cyan;
+  grid-column: 1/2;
+  grid-row: 2/2;
+}
+
+.tip-result {
+  color: $Strong-cyan;
+  font-size: 2.8rem;
+
+  grid-column: 2/2;
+  grid-row: 1/3;
+  justify-self: flex-end;
+  align-self: center;
+}

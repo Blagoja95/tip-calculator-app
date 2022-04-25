@@ -8,7 +8,7 @@ class TipResult extends React.Component {
       <div className="result-block">
         <Result name={"Tip Amount"} value={tip} />
         <Result name={"Total"} value={tot} />
-        <Btn value={"RESET"}></Btn>
+        <Btn value={"RESET"} className={"tip btn btn--tip btn--reset"}></Btn>
       </div>
     );
   }
