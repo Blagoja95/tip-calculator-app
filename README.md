@@ -2,16 +2,19 @@
 
 ## Build with
 
+- REACT
+- SCSS for styling
+- Mobile first approach
+- used gh-pages module for github deployment
+
 ## [LIVE SITE](https://blagoja95.github.io/tip-calculator-app/)
 
-Your users should be able to:
-
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Calculate the correct tip and total cost of the bill per person
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## TODO:
+  - deploy to github pages (DONE)
+  - reset result (DONE)
+  - reset user inputs
+  - custom tip % functionality 
+  
 ## Available Scripts
 
 In the project directory, you can run:
