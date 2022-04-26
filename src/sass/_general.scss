@@ -69,3 +69,9 @@ main {
 
   @extend %flexGap;
 }
+
+.error-msg {
+  color: red !important;
+  border: 3px solid red !important;
+  font-size: 1.6rem;
+}

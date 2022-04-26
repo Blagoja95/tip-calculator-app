@@ -11,9 +11,16 @@ class TipForm extends React.Component {
   };
 
   // callbacks
-  handlePeople = (data) => this.setState({ people: +data });
-  handleBill = (data) => this.setState({ bill: +data });
-  handlePercentage = (data) => this.setState({ percentage: +data / 100 });
+  handlePeople = (data) => this.setState({ people: data });
+  handleBill = (data) => this.setState({ bill: data });
+  handlePercentage = (data) => this.setState({ percentage: data / 100 });
+
+  formSubmit = (e) => {
+    e.preventDefault();
+
+    const result = this.calculateTip(this.state);
+    this.props.getData(result);
+  };
 
   calculateTip(data) {
     const { bill, people, percentage } = data;
@@ -25,52 +32,48 @@ class TipForm extends React.Component {
     return result;
   }
 
-  render = ({ getData } = this.props) => {
+  render = ({ reset } = this.props) => {
     return (
       <div className="tip-block">
-        <form
-          className="form-tip"
-          onSubmit={(e) => {
-            e.preventDefault();
-            getData(this.calculateTip(this.state));
-          }}
-        >
-          <InputField name={"Bill"} handleData={this.handleBill} />
+        <form className="form-tip" onSubmit={this.formSubmit}>
+          <InputField name={"Bill"} getData={this.handleBill} />
           <div className="tip-select">
             <h2 className="title">Select Tip %</h2>
             <div className="tips">
               <TipSelectBtn
                 value="5%"
                 className={"tip btn btn--tip"}
-                handleData={this.handlePercentage}
+                getData={this.handlePercentage}
+                reset={reset}
               />
               <TipSelectBtn
                 value="10%"
                 className={"tip btn btn--tip"}
-                handleData={this.handlePercentage}
+                getData={this.handlePercentage}
+                reset={reset}
               />
               <TipSelectBtn
                 value="15%"
                 className={"tip btn btn--tip"}
-                handleData={this.handlePercentage}
+                getData={this.handlePercentage}
+                reset={reset}
               />
               <TipSelectBtn
                 value="25%"
                 className={"tip btn btn--tip"}
-                handleData={this.handlePercentage}
+                getData={this.handlePercentage}
+                reset={reset}
               />
               <TipSelectBtn
                 value="50%"
                 className={"tip btn btn--tip"}
-                handleData={this.handlePercentage}
+                getData={this.handlePercentage}
+                reset={reset}
               />
               <CustomInput name="custom" handleData={this.handlePercentage} />
             </div>
           </div>
-          <InputField
-            name={"Number of people"}
-            handleData={this.handlePeople}
-          />
+          <InputField name={"Number of people"} getData={this.handlePeople} />
         </form>
       </div>
     );

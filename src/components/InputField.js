@@ -2,24 +2,31 @@ import React from "react";
 
 class InputField extends React.Component {
   error = (e) => {
-    e.target.value = "Can't be zero";
-    e.target.style.color = "red";
-    e.target.style.border = "3px solid red";
-    e.target.style.fontSize = "16px";
+    e.target.value = "Can't be empty";
+    e.target.classList.add("error-msg");
+
+    setTimeout(() => {
+      e.target.value = 0;
+      e.target.classList.remove("error-msg");
+    }, 2000);
   };
 
-  render = ({ name, handleData } = this.props) => {
+  handleData = (e) => {
+    const userInput = +e.target.value;
+    if (userInput !== 0) {
+      this.props.getData(userInput);
+    } else this.error(e);
+  };
+
+  render = ({ name } = this.props) => {
     return (
       <div className="input">
-        <label htmlFor="bill">{name}</label>
+        <label htmlFor={name}>{name}</label>
         <input
           className="input__bar"
-          placeholder={0}
+          placeholder="0"
           name={name}
-          onChange={(e) => {
-            if (+e.target.value !== 0) handleData(e.target.value);
-            else this.error(e);
-          }}
+          onChange={this.handleData}
         />
       </div>
     );
